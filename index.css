@@ -1,0 +1,65 @@
+/*header
+*/
+.container{
+    width:600px;
+    height:800px;
+}
+.input-div {
+    text-align: center;
+}
+
+input{
+    width:75%;
+    height: 30px;
+}
+.add{
+    text-align: center;
+}
+button{
+    height:30px;
+    width:20%;
+}
+
+/*items*/
+ul{
+    margin: 10px auto;
+    list-style: none;
+    padding:0;
+    text-align: center;
+}
+li{
+    cursor:pointer;
+    position: relative;
+    font-size:18px;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+}
+li:nth-child(odd){
+    background: silver;
+}
+.close{
+    float: right;
+    margin-left: 5px;
+}
+.ok{
+    float:right;
+    color:rgb(148, 148, 148);
+}
+.ok:hover{
+    opacity: 10 ;
+}
+
+
+
+.line{
+    border: 2px solid black;
+    margin: 2px auto;
+}
+
+.blue{
+    color:blue;
+}
+
+.done{
+    color: rgb(145, 210, 229);
+}
