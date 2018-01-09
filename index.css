@@ -33,17 +33,26 @@ li{
     font-size:18px;
     padding: 12px 8px 12px 40px;
     background: #eee;
+    overflow: auto;
 }
 li:nth-child(odd){
     background: silver;
 }
+
+
 .close{
     float: right;
     margin-left: 5px;
 }
+.close::after{
+    clear:left;
+}
 .ok{
     float:right;
     color:rgb(148, 148, 148);
+}
+.ok::before{
+    clear:left;
 }
 .ok:hover{
     opacity: 10 ;

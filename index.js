@@ -12,7 +12,7 @@ var defaultItems = document.querySelectorAll('li');
 for(var i =0; i < defaultItems.length; i++){
     defaultItems[i].querySelector('.close').addEventListener('click',removeItem,false);
     defaultItems[i].querySelector('.ok').addEventListener('click',toggleDone,false);
-    defaultItems[i].children[0].addEventListener('click', edit, false);
+    defaultItems[i].children[2].addEventListener('click', edit, false);
 }
 
 //new element
@@ -33,7 +33,7 @@ function newItem(){
     var newElem = document.createElement('li');
     var newClose = document.createElement('span');
     var newOk = document.createElement('span');
-    var newText = document.createElement('span');
+    var newText = document.createElement('p');
 
     newText.addEventListener('click', edit,false);
     newClose.className='close';
@@ -47,9 +47,10 @@ function newItem(){
         newText.innerHTML=content;
         todos.appendChild(newElem);
         document.querySelector('input').value = '';
-        newElem.appendChild(newText);
+        
         newElem.appendChild(newClose);
         newElem.appendChild(newOk);
+        newElem.appendChild(newText);
 
     }else{
         alert('please input somthing');
@@ -109,7 +110,7 @@ function editDoneOnEnter(){
 
 function editToggle(item){
     var parent = item.parentNode;
-    var replaceTag = item.tagName==='SPAN'?'INPUT':'SPAN';
+    var replaceTag = item.tagName==='P'?'INPUT':'P';
     var replacement = document.createElement(replaceTag);
     if(replaceTag === 'INPUT'){
         replacement.value = item.innerHTML; 
@@ -122,7 +123,7 @@ function editToggle(item){
     }else{
         replacement.addEventListener('click', edit, false);
     }
-    parent.insertBefore(replacement,item);
+    parent.appendChild(replacement,item);
     parent.removeChild(item);
     return replacement;
 }
