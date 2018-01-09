@@ -5,7 +5,7 @@ var done = document.querySelector('.done');
 
 //global var for tracking the editting node
 var editting = null;
-document.body.addEventListener('click', editDone,false);
+document.addEventListener('click', editDone,false);
 
 //add eventlistener for default items
 var defaultItems = document.querySelectorAll('li');
